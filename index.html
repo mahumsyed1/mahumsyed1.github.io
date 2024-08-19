@@ -316,8 +316,29 @@ header p {
 
 
   
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script  src="https://cdpn.io/cpe/boomboom/pen.js?key=pen.js-0838cbce-3c0d-11a6-e2e1-0d32c2819c3d" crossorigin></script>
+<script>$(".gallery ul li a").click(function () {
+	var itemID = $(this).attr("href");
+	$(".gallery ul").addClass("item_open");
+	$(itemID).addClass("item_open");
+	return false;
+});
+$(".close").click(function () {
+	$(".port, .gallery ul").removeClass("item_open");
+	return false;
+});
+
+$(".gallery ul li a").click(function () {
+	$("html, body").animate(
+		{
+			scrollTop: parseInt($("#top").offset().top)
+		},
+		400
+	);
+});
+</script>
 </body>
 
 </html>
+
+
+

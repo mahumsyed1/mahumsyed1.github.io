@@ -1,344 +1,492 @@
 <!DOCTYPE html>
-<html lang='en' class=''>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Moderustic:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Mahum Syed Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
 
-<head>
+    <style>
+      /* Setting fade transition and default settings */
+      body {
+        color: black;
+        background-color: black;
+        transition: background-color 1s ease;
+      }
 
-  <meta charset='UTF-8'>
-  <title>CodePen Demo</title>
+      /* panel styles */
+      .panel {
+        color: white;
+        min-height: 50vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: sans-serif;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
 
-  <meta name="robots" content="noindex">
+      #vpanel {
+        padding-right: 200px;
+      }
 
-  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
-  <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
-  <link rel="canonical" href="https://codepen.io/MightyShaban/pen/LYGzOR">
+      /* two-column layout */
+      .panel-content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
 
-  
-  
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+      .panel-text {
+        flex: 1;
+        padding-right: 20px;
+      }
 
-  <style id="INLINE_PEN_STYLESHEET_ID">
-    * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-*:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+      .panel-image {
+        text-align: center;
+        padding: 20px;
+        margin: 10px;
+      }
 
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  line-height: 1.5;
-  color: #333;
-}
+      /* panel colors */
+      .color-black {
+        background-color: black;
+      }
+      .color-violet {
+        background-color: #606e5b;
+      }
+      .color-indigo {
+        background-color: #b5cfb7;
+      }
+      .color-blue {
+        background-color: #cadabf;
+      }
+      .color-orange {
+        background-color: #e7e8d8;
+      }
 
-a {
-  color: #fff;
-}
+      header {
+        background-image: url("https://cdn.glitch.global/6870a6b0-2b73-45c9-9cd1-27632878fe9d/IMG_0847.jpeg?v=1724046996556");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #fff;
+        text-align: center;
+        padding: 300px 0;
+        height: 10vh;
+        box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.7);
+      }
 
-.row {
-  width: 100%;
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 0;
-  clear: both;
-}
-.row img {
-  max-width: 100%;
-  height: auto;
-  padding: 0;
-  margin: 0;
-}
+      header h1 {
+        color: white;
+        text-transform: uppercase;
+        font-family: "Jersey 10", sans-serif;
+        font-size: 125px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        line-height: 0.8;
+        margin-top: -40px;
+        text-shadow: -3px -3px 0 #092528, 1px -1px 0 #092528, -1px 1px 0 #092528,
+          1px 1px 0 #092528;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+      }
 
-.gallery ul li {
-  float: left;
-  margin: 0 0.8771929825%;
-  overflow: hidden;
-}
+      header h1 span {
+        font-family: "Montserrat", sans-serif;
+        color: #092528;
+        letter-spacing: 7px;
+        font-size: 25px;
+        text-shadow: -2px -2px 0 white, 2px -2px 0 #000, -2px 2px 0 #000,
+          2px 2px 0 #000;
+        opacity: 0;
+        animation: fadeIn 1s forwards 1s;
+      }
 
-header {
-  background-color: #84b4b1;
-  color: #fff;
-  text-align: center;
-  padding: 30px 0 120px;
-}
-header h1 {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 65px;
-  font-weight: 400;
-  letter-spacing: 3px;
-  line-height: 0.8;
-  padding-top: 50px;
-  font-family: "Montserrat", sans-serif;
-}
-header h1 span {
-  text-transform: uppercase;
-  letter-spacing: 7px;
-  font-size: 25px;
-  line-height: 1;
-}
-header p {
-  padding-top: 30px;
-}
+      header p {
+        padding-top: 30px;
+      }
 
-.gallery {
-  padding: 40px 0 300px;
-  position: relative;
-  overflow: hidden;
-}
-.gallery ul {
-  padding-top: 50px;
-  position: relative;
-}
-.gallery ul li {
-  margin-bottom: 20px;
-  width: 23.2456140351%;
-  position: relative;
-}
-.gallery ul li a {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  line-height: 0;
-}
-.gallery ul li a:before {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  top: 40%;
-  left: 50%;
-  margin: -14px 0 0 -16px;
-  background: url(data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%0A%09%20id%3D%22svg2%22%20xmlns%3Adc%3D%22http%3A//purl.org/dc/elements/1.1/%22%20xmlns%3Acc%3D%22http%3A//creativecommons.org/ns%23%22%20xmlns%3Ardf%3D%22http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23%22%20xmlns%3Asvg%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Asodipodi%3D%22http%3A//sodipodi.sourceforge.net/DTD/sodipodi-0.dtd%22%20xmlns%3Ainkscape%3D%22http%3A//www.inkscape.org/namespaces/inkscape%22%20inkscape%3Aversion%3D%220.48.4%20r9939%22%20sodipodi%3Adocname%3D%22icon-fullscreen.svg%22%0A%09%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20960%20560%22%0A%09%20enable-background%3D%22new%200%200%20960%20560%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Csodipodi%3Anamedview%20%20borderopacity%3D%221%22%20pagecolor%3D%22%23ffffff%22%20bordercolor%3D%22%23666666%22%20objecttolerance%3D%2210%22%20gridtolerance%3D%2210%22%20guidetolerance%3D%2210%22%20showgrid%3D%22false%22%20fit-margin-top%3D%220%22%20fit-margin-left%3D%220%22%20inkscape%3Azoom%3D%227.375%22%20inkscape%3Acx%3D%22-5.1525424%22%20inkscape%3Acy%3D%2216%22%20id%3D%22namedview11%22%20inkscape%3Awindow-x%3D%22-8%22%20inkscape%3Awindow-y%3D%22-8%22%20fit-margin-right%3D%220%22%20inkscape%3Apageopacity%3D%220%22%20fit-margin-bottom%3D%220%22%20inkscape%3Awindow-width%3D%221366%22%20inkscape%3Awindow-height%3D%22706%22%20inkscape%3Awindow-maximized%3D%221%22%20inkscape%3Apageshadow%3D%222%22%20inkscape%3Acurrent-layer%3D%22svg2%22%3E%0A%09%3C/sodipodi%3Anamedview%3E%0A%3Cg%3E%0A%09%3Crect%20x%3D%22220%22%20y%3D%22260%22%20fill%3D%22%23FFFFFF%22%20width%3D%22536%22%20height%3D%2224%22/%3E%0A%3C/g%3E%0A%3Cg%3E%0A%09%3Crect%20x%3D%22476%22%20y%3D%224%22%20fill%3D%22%23FFFFFF%22%20width%3D%2224%22%20height%3D%22556%22/%3E%0A%3C/g%3E%0A%3C/svg%3E%0A) no-repeat;
-  content: "";
-  opacity: 0;
-  z-index: 1;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-.gallery ul li a:hover:before {
-  top: 50%;
-  opacity: 1;
-}
-.gallery ul li a:after {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  content: "";
-  opacity: 0;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-.gallery ul li a:hover:after {
-  opacity: 1;
-}
+      #lastimg {
+        justify-content: center;
+        align-items: center;
+        padding-left: 300px;
+        width: 50%;
+      }
 
-.port {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  padding-top: 100px;
-  background: #ffffff;
-  background-color: #fafafa;
-  z-index: 103;
-  visibility: hidden;
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
-  border-bottom: 1px solid #d0d0d0;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-.port img {
-  width: 50%;
-}
-.port .description {
-  float: left;
-  width: 50%;
-  max-height: 100%;
-  padding: 0 40px 40px;
-  overflow: auto;
-}
-.port h1 {
-  font-size: 35px;
-  line-height: 2.3;
-  padding: 0;
-}
-.port > * {
-  opacity: 0;
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-}
-.port.item_open {
-  visibility: visible;
-  -webkit-transform: translateY(0%);
-  transform: translateY(0%);
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-.port > * {
-  opacity: 1;
-  -webkit-transition-delay: 0.5s;
-  transition-delay: 0.5s;
-}
+      /*     .panel img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    } */
+      .panel-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for transform and filter */
+      }
 
-.close {
-  width: 21px;
-  height: 21px;
-  background: url(data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%0A%09%20id%3D%22svg2%22%20xmlns%3Adc%3D%22http%3A//purl.org/dc/elements/1.1/%22%20xmlns%3Acc%3D%22http%3A//creativecommons.org/ns%23%22%20xmlns%3Ardf%3D%22http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23%22%20xmlns%3Asvg%3D%22http%3A//www.w3.org/2000/svg%22%0A%09%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%2021%2021%22%0A%09%20enable-background%3D%22new%200%200%2021%2021%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cg%20id%3D%22layer1%22%20transform%3D%22translate%280%2C-1031.3622%29%22%3E%0A%09%3Cpath%20id%3D%22path2987%22%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20d%3D%22M0%2C1031.4l21%2C21%22/%3E%0A%09%3Cpath%20id%3D%22path2989%22%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20d%3D%22M21%2C1031.4l-21%2C21%22/%3E%0A%3C/g%3E%0A%3C/svg%3E%0A%0A) no-repeat;
-  position: absolute;
-  right: 10px;
-  top: -121px;
-  opacity: 1;
-  z-index: 1004;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-}
-.item_open .close {
-  opacity: 1;
-  top: 0px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-  </style>
+      .panel-image:hover img {
+        transform: scale(1.05); /* Scale the image slightly */
+        filter: brightness(
+          1.1
+        ); /* Slightly increase brightness for a subtle effect */
+      }
 
-  
-<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
-<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6d8bf8b4b479137260842506acbb12717dace0823c023e08b96360e60b0840d9.js"></script>
-<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
-<script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
-</head>
+      h2 {
+        margin: 0;
+        padding: 0;
+      }
 
-<body>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+      .desc {
+        color: white;
+        text-align: left;
+        font-family: "Moderustic", sans-serif;
+        font-size: 20px;
+        padding-right: 200px;
+        padding-left: 200px;
+        letter-spacing: 1px;
+        line-height: 1.5;
+      }
 
+      .desc-container {
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: opacity 1s ease, transform 1s ease;
+      }
 
-<header>
-    <h1>Balkan Style <br> <span>[ Portfolio Gallery ]</span></h1>
-</header>
+      .desc-container.visible {
+        animation: slideFadeIn 1s forwards;
+      }
 
-<div id="top"></div>
-<section class="gallery">
-	<div class="row">
-		<ul>
-			<a href="#" class="close"></a>
-			<li>
-				<a href="#item02">
-					<img src="https://cdn.dribbble.com/users/545884/screenshots/3981307/lorena2.png" alt="">
-				</a>
-			</li>
+      .table-container {
+        border: 1px solid white;
+        border-radius: 15px;
+        display: inline-block;
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: opacity 1s ease, transform 1s ease;
+      }
 
-			<li>
-				<a href="#item02">
-					<img src="https://cdn.dribbble.com/users/545884/screenshots/3892302/contact.png" alt="">
-				</a>
-			</li>
+      .table-container.visible {
+        animation: slideFadeIn 1s forwards;
+      }
 
-			<li>
-				<a href="#item02">
-					<img src="https://cdn.dribbble.com/users/545884/screenshots/4154721/dive--001.png" alt="">
-				</a>
-			</li>
-			<li>
-				<a class="image" href="#item01">
-					<img src="https://cdn.dribbble.com/users/545884/screenshots/4356121/darko--dr.jpg" alt="">
-				</a>
-			</li>
-			<li>
-				<a class="image" href="#item02">
-					<img src="https://cdn.dribbble.com/users/545884/screenshots/3695553/news.png" alt="">
-				</a>
-			</li>
-			<li>
-				<a class="image" href="#item01">
-					<img src="https://cdn.dribbble.com/users/545884/screenshots/4360101/liberosis_--_12.png" alt="">
-				</a>
-			</li>
-			<li>
-				<a class="image" href="#item01">
-					<img src="https://cdn.dribbble.com/users/545884/screenshots/3148799/technical-book.jpg" alt="">
-				</a>
-			</li>
-			<li>
-				<a class="image" href="#item01">
-					<img src="https://cdn.dribbble.com/users/545884/screenshots/2883479/cover.jpg" alt="">
-				</a>
-			</li>
-		</ul>
-	</div> <!-- / row -->
+      table {
+        color: white;
+        text-align: left;
+        font-family: "Moderustic", sans-serif;
+        font-size: 20px;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        width: auto;
+        border-collapse: separate;
+        border-spacing: 20px 0;
+      }
 
-	<!-- Item 01 -->
-	<div id="item01" class="port">
-	
-		<div class="row">
-			<div class="description">
-				<h1>Item 01</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis libero erat. Integer ac purus est. Proin erat mi, pulvinar ut magna eget, consectetur auctor turpis.</p>
-			</div>
+      td {
+        padding: 5px;
+        vertical-align: top;
+      }
 
-				<img src="https://cdn.dribbble.com/users/545884/screenshots/3981307/lorena2.png" alt="">
-			</div>
-		</div> <!-- / row -->
+      .linked {
+        display: inline-block;
+        padding: 5px;
+        margin: 10px;
+        position: relative;
+        z-index: 0;
+        transition: all 0.35s ease;
+        opacity: 0;
+        animation: fadeIn 1s forwards 1s;
+      }
 
-	</div> <!-- / Item 02 -->
+      .linked::before,
+      .linked::after {
+        content: "";
+        position: absolute;
+        width: 10%;
+        height: 25%;
+        background: transparent;
+        transition: 0.35s;
+        z-index: -1;
+      }
 
-	<!-- Item 02 -->
-	<div id="item02" class="port">
-	
-		<div class="row">
-			<div class="description">
-				<h1>Item 02</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis libero erat. Integer ac purus est. Proin erat mi, pulvinar ut magna eget, consectetur auctor turpis.</p>
-			</div>
-			<img src="https://cdn.dribbble.com/users/545884/screenshots/2883479/cover.jpg" alt="">
-		</div> <!-- / row -->
+      .linked::before {
+        top: 0;
+        left: 0;
+        border-left: 1px solid white;
+        border-top: 1px solid white;
+      }
 
-	</div> <!-- / Item 02 -->
+      .linked::after {
+        bottom: 0;
+        right: 0;
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+      }
 
-</section> <!-- / projects -->
+      .linked:hover::before,
+      .linked:hover::after {
+        width: 99%;
+        height: 98%;
+      }
 
+      .linked img {
+        width: 100px;
+        height: auto;
+        display: block;
+        transition: filter 0.5s ease;
+        position: relative;
+        z-index: 1;
+      }
 
-  
-<script>$(".gallery ul li a").click(function () {
-	var itemID = $(this).attr("href");
-	$(".gallery ul").addClass("item_open");
-	$(itemID).addClass("item_open");
-	return false;
-});
-$(".close").click(function () {
-	$(".port, .gallery ul").removeClass("item_open");
-	return false;
-});
+      .projdesc {
+        font-family: "Montserrat", sans-serif;
+        color: #092528;
+        letter-spacing: 7px;
+        font-size: 25px;
+        text-transform: uppercase;
+      }
 
-$(".gallery ul li a").click(function () {
-	$("html, body").animate(
-		{
-			scrollTop: parseInt($("#top").offset().top)
-		},
-		400
-	);
-});
-</script>
-</body>
+      .secthead {
+        font-family: "Montserrat", sans-serif;
+        color: white;
+        letter-spacing: 7px;
+        font-size: 25px;
+        text-align: center;
+        padding-left: 170px;
+        margin-right: 40px;
+      }
 
+      .secthead2 {
+        font-family: "Montserrat", sans-serif;
+        color: white;
+        letter-spacing: 7px;
+        font-size: 25px;
+        text-align: center;
+      }
+
+      @keyframes slideFadeIn {
+        0% {
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body translate="no">
+    <header>
+      <h1>Mahum Syed<br /><span>[ Portfolio ]</span></h1>
+      <div class="linked">
+        <a
+          href="https://www.linkedin.com/in/mahum-syed-7689bb24a/"
+          target="_blank"
+        >
+          <img
+            src="https://cdn.glitch.global/6870a6b0-2b73-45c9-9cd1-27632878fe9d/Untitled_Artwork%2014.png?v=1724053227587"
+            alt="LinkedIn"
+          />
+        </a>
+      </div>
+      <div class="linked">
+        <a href="https://github.com/mahumsy?tab=repositories" target="_blank">
+          <img
+            src="https://cdn.glitch.global/d57f71fc-cb0b-4be1-a1b9-1ba01bc060a1/Untitled_Artwork%2015.png?v=1724112332147"
+            alt="GitHub"
+          />
+        </a>
+      </div>
+      <div class="linked">
+        <a href="mailto:mahumsye@usc.edu" target="_blank">
+          <img
+            src="https://cdn.glitch.global/d57f71fc-cb0b-4be1-a1b9-1ba01bc060a1/Untitled_Artwork%2016.png?v=1724113922465"
+            alt="Email"
+          />
+        </a>
+      </div>
+      <div class="desc-container">
+        <p class="desc">
+          Hi, I'm Mahum! I'm a senior at the University of Southern California,
+          pursuing a bachelor's degree in Computer Science and Business
+          Administration (expected May 2025).
+          <br /><br />
+          I have hands-on experience in full-stack development, both
+          independently and in teams. My journey in tech has been incredibly
+          rewarding, including roles at places like Girls Who Code, which have
+          allowed me to empower others in the field. My academic and
+          professional experiences have allowed me to work with diverse sets of
+          people and sharpen my problem-solving, analytical, and collaboration
+          skills along the way.
+          <br /><br />
+          I am excited to bring my skills and passion for technology to a
+          Software Engineering, Data Analytics, Project Management, or other
+          related tech intern role, where I am confident I will bring value to
+          the team and continue to grow in my career.
+        </p>
+      </div>
+    </header>
+
+    <div class="panel" data-color="black">
+      <div class="panel-content"></div>
+    </div>
+
+    <div class="panel" id="vpanel" data-color="violet">
+      <div class="panel-content">
+        <p class="secthead">TECHNICAL SKILLS</p>
+        <div class="table-container">
+          <table>
+            <tr>
+              <td><b>Languages:</b></td>
+              <td>Python, Java, C/C++, JavaScript, SQL, H2, HTML, CSS, R</td>
+            </tr>
+            <tr>
+              <td><b>Frameworks:</b></td>
+              <td>React, Spring Boot, Next.js, p5.js</td>
+            </tr>
+            <tr>
+              <td><b>Testing:</b></td>
+              <td>JUnit, Jest, Gherkin, Cucumber</td>
+            </tr>
+            <tr>
+              <td><b>Tools:</b></td>
+              <td>
+                Microsoft Office, Google Workspace, IntelliJ, Maven, Eclipse,
+                Git/GitHub, Anaconda, VS Code, Docker, RStudio, Netlify
+              </td>
+            </tr>
+            <tr>
+              <td><b>Methodologies:</b></td>
+              <td>
+                Test-Driven Development (TDD), Agile Project Management, Sprints
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <p class="secthead2">PROJECTS</p>
+
+    <div class="panel" data-color="indigo">
+      <div class="panel-content">
+        <div class="panel-image">
+          <a href="camp.html">
+            <img
+              src="https://cdn.glitch.global/757721ca-2265-472f-acb5-d6fa9394ba4b/Image%208-21-24%20at%2012.15%E2%80%AFPM.jpeg?v=1724267730374"
+              alt="Project Image"
+            />
+          </a>
+          <p class="projdesc">Let's Go Camping</p>
+        </div>
+        <div class="panel-image">
+          <a href="trojan.html">
+            <img
+              src="https://cdn.glitch.global/757721ca-2265-472f-acb5-d6fa9394ba4b/Image%208-21-24%20at%2011.40%E2%80%AFPM.jpeg?v=1724308846036"
+              alt="Project Image"
+            />
+          </a>
+          <p class="projdesc">Trojan Ordering</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" data-color="blue">
+      <div class="panel-content">
+        <div class="panel-image">
+          <a href="crochet.html">
+            <img
+              src="https://cdn.glitch.global/62b8103e-9117-4e60-8141-d3891339061a/Image%208-22-24%20at%201.31%E2%80%AFAM.jpeg?v=1724315531593"
+              alt="Project Image"
+            />
+          </a>
+          <p class="projdesc">Crochet Companion</p>
+        </div>
+        <div class="panel-image">
+          <a href="claire.html">
+            <img
+              src="https://cdn.glitch.global/62b8103e-9117-4e60-8141-d3891339061a/Image%208-22-24%20at%2012.25%E2%80%AFAM.jpeg?v=1724311552596"
+              alt="Project Image"
+            />
+          </a>
+          <p class="projdesc">Claire's Place Foundation</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" data-color="orange">
+      <div class="panel-content">
+        <div class="panel-image" id="lastimg">
+          <a href="pomo.html">
+            <img
+              src="https://cdn.glitch.global/757721ca-2265-472f-acb5-d6fa9394ba4b/Image%208-22-24%20at%2012.02%E2%80%AFAM.jpeg?v=1724310994020"
+              alt="Project Image"
+            />
+          </a>
+          <p class="projdesc">Pomodoro Timer / To-Do List</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script id="rendered-js">
+      $(window).on("scroll", function () {
+        var scrollPos = $(window).scrollTop();
+        var skillsSectionPos =
+          $("#vpanel").offset().top - $(window).height() / 2;
+        var descSectionPos =
+          $(".desc-container").offset().top - $(window).height() / 2;
+
+        if (scrollPos > skillsSectionPos) {
+          $(".table-container").addClass("visible");
+        }
+
+        if (scrollPos > descSectionPos) {
+          $(".desc-container").addClass("visible");
+        }
+      });
+
+      $(window)
+        .scroll(function () {
+          var $window = $(window),
+            $body = $("body"),
+            $panel = $(".panel");
+
+          var scroll = $window.scrollTop() + $window.height() / 3;
+
+          $panel.each(function () {
+            var $this = $(this);
+
+            if (
+              $this.position().top <= scroll &&
+              $this.position().top + $this.height() > scroll
+            ) {
+              $body.removeClass(function (index, css) {
+                return (css.match(/(^|\s)color-\S+/g) || []).join(" ");
+              });
+              $body.addClass("color-" + $(this).data("color"));
+            }
+          });
+        })
+        .scroll();
+    </script>
+  </body>
 </html>
-
-
-

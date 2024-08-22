@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Moderustic:wght@300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <title>Mahum's Projects: Claire's Place Foundation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <style>
+    /* Setting fade transition and default settings */
+    body {
+      color: #606e5b;
+      background-color:  #606e5b;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Fade-in effect for sections */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* panel styles */
+    .panel {
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 50px;
+      
+    }
+
+    /* two-column layout */
+    .panel-content {
+      display: block;
+      width: 100%;
+    }
+
+    .panel-image {
+      text-align: center;
+      padding: 20px;
+      margin: 10px;
+    }
+
+    .panel-image img {
+      width: 70%;
+      height: auto;
+      border-radius: 15px;
+      transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for transform and filter */
+    }
+
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .desc {
+      color: #CADABF;
+      text-align: left;
+      font-family: "Moderustic", sans-serif;
+      font-size: 20px;
+      padding-right: 230px;
+      padding-left: 250px;
+      letter-spacing: 1px;
+      line-height: 1.5;
+    }
+
+    .projdesc {
+      font-family: "Montserrat", sans-serif;
+      color: #CADABF;
+      letter-spacing: 7px;
+      font-size: 25px;
+      text-transform: uppercase;
+    }
+
+    .projlink {
+      font-family: "Orbitron", sans-serif;
+      color: #CADABF;
+      letter-spacing: 5px;
+      font-size: 20px;
+      text-transform: uppercase;
+      transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .projlink:hover {
+      font-size: 24px; /* Increase font size */
+      color: rgba(9, 37, 40, 0.7); /* Fade color */
+    }
+
+    .secthead {
+      font-family: "Montserrat", sans-serif;
+      color: white;
+      letter-spacing: 7px;
+      font-size: 25px;
+      text-align: center;
+      padding-left: 170px;
+      margin-right: 40px;
+    }
+
+    .secthead2 {
+      font-family: "Montserrat", sans-serif;
+      color: white;
+      letter-spacing: 7px;
+      font-size: 25px;
+      text-align: center;
+    }
+
+    .projimgs {
+      text-align: center;
+      padding-top: 20px;
+    }
+    
+    .projimgs img {
+      width: 50%; /* Adjust the width to make the image smaller */
+      height: auto; /* Maintain the aspect ratio */
+      border-radius: 10px; /* Apply a border radius to the image */
+      transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for transform and filter */
+    }
+
+  </style>
+
+</head>
+
+<body translate="no">
+
+  <div class="panel fade-section" data-color="black">
+    <div class="panel-content">
+      <div class="panel-image">
+        <img src="https://cdn.glitch.global/62b8103e-9117-4e60-8141-d3891339061a/Image%208-22-24%20at%2012.25%E2%80%AFAM.jpeg?v=1724311552596" alt="Project Image">
+        <p class="projdesc">Claire's Place Foundation</p>
+        <br>
+        <a href="https://github.com/mahumsy/clairesplace/tree/main" target="_blank" class="projlink">Link To Code</a>
+        <br><br>
+        <a href="changethis.com" target="_blank" class="projlink">Link To Our Presentation Executive Summary</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel fade-section" data-color="violet">
+    <div class="panel-content">
+      <p class="desc">
+        <b>Overview:</b>
+        <br>
+         • Leveraged statistical analysis to develop impactful recommendations for the non-profit, increasing aid to families affected by cystic fibrosis
+
+        <br><br>
+        
+• Uncovered key insights on donation trends, regional breakdowns, and campaign effectiveness through comprehensive data analysis and visualization of 300+ patients, through bootstrap analysis, hypothesis testing, regression models, and more 
+
+        <br><br><br>
+        <b>Skills:</b> 
+        <br>
+        R · RStudio
+        <br><br><br>
+      
+      </p>
+
+      
+    </div>
+  </div>
+
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script id="rendered-js">
+    $(window).on('scroll', function() {
+      var scrollPos = $(window).scrollTop();
+
+      $('.fade-section').each(function() {
+        var sectionTop = $(this).offset().top;
+        var windowBottom = scrollPos + $(window).height();
+
+        if (windowBottom > sectionTop + 100) {
+          $(this).addClass('visible');
+        }
+      });
+    });
+
+    $(window).scroll(function () {
+      var $window = $(window),
+          $body = $('body'),
+          $panel = $('.panel');
+
+      var scroll = $window.scrollTop() + $window.height() / 3;
+
+      $panel.each(function () {
+        var $this = $(this);
+
+        if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
+          $body.removeClass(function (index, css) {
+            return (css.match(/(^|\s)color-\S+/g) || []).join(' ');
+          });
+          $body.addClass('color-' + $(this).data('color'));
+        }
+      });
+    }).scroll();
+  </script>
+
+</body>
+</html>
